@@ -2121,11 +2121,11 @@ p > code {
       }.nav-item a:hover {
         color: #222;
       }.nav-item-active {
-      background: #f9f9f97f;
+      background: ##f9f9f9;
     }
 
     .nav-item:hover {
-      background: #f9f9f97f;
+      background: ##f9f9f9;
       color: rgba(0, 0, 0, 0.98);
     }.site-author-image {
       border-radius: 50%;
@@ -2164,19 +2164,19 @@ p > code {
       background-color: #ffffff7f;
     }
     .site-meta {
-      background: #adb5bd !important;
+      background: #34373A !important;
     }
     .head-top-line {
-      background: #adb5bd;
+      background: #34373A;
     }
     .brand {
-      background: #adb5bd7f;
+      background: #34373A7f;
     }
     .main-title, .brand {
-      color: #212529 !important;
+      color: #e3fafc !important;
     }
     .mist .site-title i {
-      background: #2125297f;
+      background: #e3fafc7f;
     }.box-shadow-wrapper {
       box-shadow: none !important;
     }body {

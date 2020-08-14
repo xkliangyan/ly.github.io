@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xkliangyan.github.io</id>
-    <title>相看两厌</title>
-    <updated>2020-08-14T09:55:27.273Z</updated>
+    <title>偷懒的人</title>
+    <updated>2020-08-14T16:19:02.925Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xkliangyan.github.io"/>
     <link rel="self" href="https://xkliangyan.github.io/atom.xml"/>
-    <subtitle>www.xkly.tk</subtitle>
+    <subtitle>&lt;b&gt;干啥啥不行，偷懒第一名！&lt;/b&gt;</subtitle>
     <logo>https://xkliangyan.github.io/images/avatar.png</logo>
     <icon>https://xkliangyan.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 相看两厌</rights>
+    <rights>All rights reserved 2020, 偷懒的人</rights>
+    <entry>
+        <title type="html"><![CDATA[第一章]]></title>
+        <id>https://xkliangyan.github.io/post/di-yi-zhang/</id>
+        <link href="https://xkliangyan.github.io/post/di-yi-zhang/">
+        </link>
+        <updated>2020-08-14T16:17:41.000Z</updated>
+    </entry>
 </feed>
