@@ -2066,7 +2066,7 @@ p > code {
       }
     @font-face {
       font-family: 'SanJiXingShuJianTi-2';
-      src: url('/media/fonts/SanJiXingShuJianTi-2.ttf');
+      src: url('https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master//media/fonts/SanJiXingShuJianTi-2.ttf');
     }
     * {
         font-family: 'SanJiXingShuJianTi-2';
