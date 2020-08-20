@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xkly.tk</id>
     <title>偷懒的人</title>
-    <updated>2020-08-18T05:21:58.110Z</updated>
+    <updated>2020-08-20T08:02:00.606Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xkly.tk"/>
     <link rel="self" href="https://xkly.tk/atom.xml"/>
@@ -11,23 +11,30 @@
     <icon>https://xkly.tk/favicon.ico</icon>
     <rights>All rights reserved 2020, 偷懒的人</rights>
     <entry>
-        <title type="html"><![CDATA[v2ray流量伪装：WebSocket + TLS +CloudflareCDN 初体验]]></title>
-        <id>https://xkly.tk/post/ibVPIl1C2/</id>
-        <link href="https://xkly.tk/post/ibVPIl1C2/">
+        <title type="html"><![CDATA[「空格」的重要性]]></title>
+        <id>https://xkly.tk/post/Blog_4/</id>
+        <link href="https://xkly.tk/post/Blog_4/">
+        </link>
+        <updated>2020-08-20T06:41:13.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[v2ray 流量伪装：WebSocket + TLS + CloudflareCDN 初体验]]></title>
+        <id>https://xkly.tk/post/Blog_3/</id>
+        <link href="https://xkly.tk/post/Blog_3/">
         </link>
         <updated>2020-08-18T03:41:34.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[偶因一回顾，便为心上人]]></title>
-        <id>https://xkly.tk/post/6S_dEO0jA/</id>
-        <link href="https://xkly.tk/post/6S_dEO0jA/">
+        <id>https://xkly.tk/post/Blog_2/</id>
+        <link href="https://xkly.tk/post/Blog_2/">
         </link>
         <updated>2020-08-18T03:21:00.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[此博客搭建过程以及遇到的问题]]></title>
-        <id>https://xkly.tk/post/ix1AfNrBw/</id>
-        <link href="https://xkly.tk/post/ix1AfNrBw/">
+        <id>https://xkly.tk/post/Blog_1/</id>
+        <link href="https://xkly.tk/post/Blog_1/">
         </link>
         <updated>2020-08-17T08:52:47.000Z</updated>
     </entry>
