@@ -2064,7 +2064,13 @@ p > code {
         width: 960px;
         margin: 0 auto;
       }
-    
+    @font-face {
+      font-family: 'SanJiXingShuJianTi-2';
+      src: url('https://cdn.jsdelivr.net/gh/xkliangyan/CDN@master/media/fonts/SanJiXingShuJianTi-2.ttf');
+    }
+    * {
+        font-family: 'SanJiXingShuJianTi-2';
+    }
     .post-body {
       font-size: 16px !important
     }
@@ -2181,7 +2187,20 @@ p > code {
     }
     .mist .site-title i {
       background: #e3fafccc;
-    }body {
+    }.site-author-name {
+  margin: 0;
+  text-align: center;
+  color: #000000;
+  font-weight: 600;
+  font-size: 2.5em;
+}
+.site-description {
+  margin-top: 0;
+  text-align: center;
+  font-size: 1em;
+  color: #fff;
+  margin: 0 0 10px 0;
+}body {
       cursor: default;
     }a {
       cursor: pointer;
