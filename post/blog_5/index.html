@@ -8,20 +8,20 @@
 <meta name="keywords" content="懒得废物">
 <meta name="description" content="干啥啥不行，偷懒第一名！">
 <meta name="theme-color" content="#34373A">
-<title>v2ray流量伪装：WebSocket + TLS +CloudflareCDN 初体验 | 偷懒的人</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xkliangyan/CDN@master/favicon.ico?v=1597728107016">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xkliangyan/CDN@master/media/css/pisces.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xkliangyan/CDN@master/media/fonts/font-awesome.css">
+<title>Hyper-V 安装 Centos7.9 以及内网穿透 | 偷懒的人</title>
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master//favicon.ico?v=1615440870113">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master//media/css/pisces.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master//media/fonts/font-awesome.css">
 <link
   href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
   rel="stylesheet" type="text/css">
 
-<link href="https://cdn.jsdelivr.net/gh/xkliangyan/CDN@master/media/hljs/styles/default.css"
+<link href="https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master//media/hljs/styles/default.css"
   rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xkliangyan/CDN@master/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master//styles/main.css">
 
-<script src="https://cdn.jsdelivr.net/gh/xkliangyan/CDN@master/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master//media/hljs/highlight.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
@@ -38,8 +38,8 @@
 
 
 
-  <meta name="description" content="v2ray流量伪装：WebSocket + TLS +CloudflareCDN 初体验" />
-  <meta name="keywords" content="学习,记录" />
+  <meta name="description" content="Hyper-V 安装 Centos7.9 以及内网穿透" />
+  <meta name="keywords" content="学习" />
 </head>
 
 <body>
@@ -89,17 +89,6 @@
               
                 <a href="/archives/" target="_self">
                   <i class="fa fa-archive"></i> 归档
-                </a>
-              
-            </li>
-          
-            
-            
-            <li class="nav-item ">
-              
-              
-                <a href="/tags/" target="_self">
-                  <i class="fa fa-tags"></i> 标签
                 </a>
               
             </li>
@@ -159,15 +148,21 @@
               
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
-    <img class="site-author-image right-motion" src="https://cdn.jsdelivr.net/gh/xkliangyan/CDN@master/images/avatar.png"/>
+    <img class="site-author-image right-motion" src="https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master//images/avatar.png"/>
     <p class="site-author-name">xkly</p>
+    
+    <div class="site-description right-motion">
+      
+        <p id="binft">此人很懒，什么都没有写</p>
+      
+    </div>
     
   </div>
   <div class="sidebar-item side-item-stat right-motion">
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">3</span>
+        <span class="site-item-stat-count">6</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -186,13 +181,6 @@
   </div>
   
     
-      <div class="sidebar-item">
-        <span class="site-item-rss">
-            <i class="fa fa-rss"></i>
-            <a href="https://xkly.tk/atom.xml" target="_blank">RSS</a>
-        </span>
-      </div>
-    
   
   
     <div class="sidebar-item sidebar-item-social">
@@ -207,7 +195,7 @@
         
           
             <a class="social-img" href="#">
-              <img src="https://cdn.jsdelivr.net/gh/xkliangyan/CDN@master" />
+              <img src="https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master/" />
               <i class="fa fa-globe" title="" ></i>
             </a>
           
@@ -222,7 +210,7 @@
 
   <div style="width: 100%; position: relative;">
     <canvas id="canvasDiyBlock" style="width:100%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
-    <script src="https://cdn.jsdelivr.net/gh/xkliangyan/CDN@master/media/js/magic/clock.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master//media/js/magic/clock.js"></script>
   </div>
 
 </div>
@@ -232,23 +220,18 @@
   <div class="toc-wrapper auto-number auto"
     id="toc_wrapper">
     <ul class="markdownIt-TOC">
-<li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E4%B9%8B%E5%89%8D">配置之前</a>
 <ul>
-<li><a href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2">写在前面</a>
+<li><a href="#hyper-v-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85">Hyper-V 虚拟机安装</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-centos-%E7%B3%BB%E7%BB%9F">安装 Centos 系统</a>
 <ul>
-<li><a href="#v2ray-%E4%BB%8B%E7%BB%8D">V2Ray 介绍</a></li>
-<li><a href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a></li>
-<li><a href="#%E8%BF%9B%E5%85%A5%E4%B8%BB%E9%A2%98">进入主题</a>
-<ul>
-<li><a href="#%E5%AE%89%E8%A3%85-nginx">安装 Nginx</a></li>
-<li><a href="#%E9%85%8D%E7%BD%AE-v2ray">配置 V2ray</a></li>
-<li><a href="#cloudflarecdn-%E5%9F%9F%E5%90%8D%E5%8A%A0%E9%80%9F%E4%B8%8E%E4%BC%AA%E8%A3%85">CloudflareCDN 域名加速与伪装</a></li>
-<li><a href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BE%E7%BD%AE">客户端设置</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B">安装过程</a></li>
+<li><a href="#%E5%BC%80%E5%90%AF-network">开启 Network</a></li>
+<li><a href="#%E5%BC%80%E5%90%AF%E9%98%B2%E7%81%AB%E5%A2%99">开启防火墙</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9ssh%E7%AB%AF%E5%8F%A3">修改SSH端口</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#end">End</a></li>
+<li><a href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91">路由器端口转发</a></li>
 </ul>
 </li>
 </ul>
@@ -516,8 +499,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://xkly.tk/post/ibVPIl1C2/">
-      v2ray流量伪装：WebSocket + TLS +CloudflareCDN 初体验
+    <a class="post-title-link" href="http://localhost:4000/post/blog_5/">
+      Hyper-V 安装 Centos7.9 以及内网穿透
     </a>
   </h1>
   <div class="post-meta">
@@ -525,7 +508,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-08-18 11:41:34">2020-08-18</span>
+      <span class="publish-time" data-t="2021-03-10 16:26:01">2021-03-10</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -534,14 +517,8 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://xkly.tk/tag/VfslJdazV/">
+      <a href="http://localhost:4000/tag/VfslJdazV/">
         <span>学习</span>
-      </a>、
-      
-      
-      
-      <a href="https://xkly.tk/tag/mjperanwT/">
-        <span>记录</span>
       </a>
       
       
@@ -550,163 +527,94 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>7<span class="language" data-lan="minute">分钟</span></span>
+      <span>2<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>1393<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>468<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <h2 id="写在前面">写在前面</h2>
-<p>不折腾党直接用一键脚本吧，母鸡慎用~<br>
-V2Ray_ws-tls_bash_onekey：<a href="https://github.com/wulabing/V2Ray_ws-tls_bash_onekey" title="链接">链接</a>（原版），参考 <a href="https://www.idleleo.com/10/2148.html" title="无主界">无主界</a> 博客内容</p>
-<h3 id="v2ray-介绍">V2Ray 介绍</h3>
-<p>V2Ray 是 Project V 下的一个工具。Project V 是一个包含一系列构建特定网络环境工具的项目，而 V2Ray 属于最核心的一个。 官方中介绍<code>Project V 提供了单一的内核和多种界面操作方式。内核（V2Ray）用于实际的网络交互、路由等针对网络数据的处理，而外围的用户界面程序提供了方便直接的操作流程。</code>不过从时间上来说，先有 V2Ray 才有 Project V。 如果还是不理解，那么简单地说，V2Ray 是一个与 Shadowsocks 类似的代理软件，可以用来科学上网学习国外先进科学技术。</p>
-<h3 id="前提条件">前提条件</h3>
+              <h1 id="配置之前">配置之前</h1>
+<blockquote>
+<p>Hyper-V 虚拟机<br>
+Centos 7.9 -Mimimal 系统<br>
+支持端口转发的路由器</p>
+</blockquote>
+<h2 id="hyper-v-虚拟机安装">Hyper-V 虚拟机安装</h2>
+<p>在Windows 专业版<code>控制面板-所有控制面板项-程序和功能-启用或关闭 Windows 功能</code> ，安装 Hyper-V 后重启计算机</p>
+<h2 id="安装-centos-系统">安装 Centos 系统</h2>
+<h3 id="安装过程">安装过程</h3>
+<p>略</p>
+<h3 id="开启-network">开启 Network</h3>
+<p>Minimal版本默认未开启网络功能，需要手动开启，输入<code>ip address</code> 查看当前网络配置，会发现没有配置网卡。<br>
+<img src="http://localhost:4000/post-images/1615369039101.png" alt="" loading="lazy"></p>
+<p>输入 <code>vi /etc/sysconfig/network-scripts/ifcfg-eth0</code> 打开网卡配置文件<br>
+编辑以下两处后保存</p>
+<blockquote>
+<p>开启DHCP自动获取网络<br>
+BOOTPROTO=dhcp<br>
+启用网卡<br>
+ONBOOT=yes</p>
+</blockquote>
+<p>重启网卡<code>service network restart</code><br>
+重新输入<code>ip address</code> ，正常获取到 IP 地址，输入<code>ping www.baidu.com</code> 返回数据包则网络正常<br>
+<img src="http://localhost:4000/post-images/1615369053319.png" alt="" loading="lazy"></p>
+<h3 id="开启防火墙">开启防火墙</h3>
 <ul>
-<li>一台境外主机，</li>
-<li>一个免备案域名，域名正确解析到主机</li>
-<li>域名申请证书，可以用免费的 Let’s Encrypt 证书，参考：<a href="https://tlanyan.me/use-lets-encrypt-certificate/">使用Let’s Encrypt的免费证书</a></li>
-<li>此文章操作基于 Linux Centos7 系统</li>
+<li>
+<p>查看防火墙状态 <code>firewall-cmd --state</code></p>
+</li>
+<li>
+<p>启用防火墙<code>systemcil start firewalld.service</code></p>
+</li>
+<li>
+<p>开机启动防火墙<code>systemcil enable firewalld.service</code></p>
+</li>
 </ul>
-<h3 id="进入主题">进入主题</h3>
-<h4 id="安装-nginx">安装 Nginx</h4>
-<p>执行:<code>yum install -y epel-release &amp;&amp; yum install -y nginx</code></p>
-<p>系统如出现提示：No package nginx available；则需要配置 repo 源后，重新执行上面命令，如下：</p>
-<pre><code>[root@centos6-1 ~]# vim /etc/yum.repos.d/nginx.repo
-#在文件中写入以下内容：
-[nginx]
-name=nginx repo
-baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
-gpgcheck=0
-enabled=1
-</code></pre>
-<p>linux 系统上 nginx 默认站点配置文件是<code>/etc/nginx/conf.d/</code>目录下的<code>default.conf</code>，我们对伪装网站进行全站 https 配置，示例内容如下：</p>
-<pre><code>server {
-    listen 80;
-    server_name xxxxx;  # 改成你的域名
-    rewrite ^(.*) https://$server_name$1 permanent;
-}
-
-server {
-    listen       443 ssl http2;
-    server_name xxxxx;
-    charset utf-8;
-
-    # ssl配置
-    ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384;
-    ssl_ecdh_curve secp384r1;
-    ssl_prefer_server_ciphers on;
-    ssl_session_cache shared:SSL:10m;
-    ssl_session_timeout 10m;
-    ssl_session_tickets off;
-    ssl_certificate xxxxx; # 改成你的证书地址
-    ssl_certificate_key xxxx; # 改成证书密钥文件地址
-
-    access_log  /var/log/nginx/access.log;
-    error_log /var/log/nginx/error.log;
-
-    root /usr/share/nginx/html; #这里是你网站位置
-    location / {
-        index  index.html;
-       #下面这一段是进行反向代理，转发到v2ray，与V2ray配置的路径要保持一致
-      	proxy_redirect off;
-     	proxy_pass http://127.0.0.1:12345; # 假设v2ray的监听地址是12345
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection &quot;upgrade&quot;;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-
-    }
-}
-</code></pre>
-<p>1.配置完成后检查有无错误，命令：<code>nginx -t</code>，正确后重启，命令：<code>systemctl restart nginx</code>，在浏览器输入域名，正常访问 https 的 nginx 欢迎页。<br>
-2.上传网站到 nginx，默认位置：<code>/usr/share/nginx/html</code>。重启后再访问域名，这时候应该显示你的网站内容了。<br>
-3.增加反向代理，转发到 V2ray。配置完成后重启，访问域名，这时候会报 502 错误，这是因为还没配置 V2ray 的原因。</p>
-<pre><code>server{
-    XXXX
-    XXXX
-    root /usr/share/nginx/html; #这里是你网站位置
-    index index.html
-    location /xkliangyan/xmhz {
-       #这一段是进行反向代理，转发到v2ray，与V2ray配置的路径要保持一致
-      	proxy_redirect off;
-     	proxy_pass http://127.0.0.1:12345; # 假设v2ray的监听地址是12345
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection &quot;upgrade&quot;;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-	}
-}
-</code></pre>
-<h4 id="配置-v2ray">配置 V2ray</h4>
-<p>安装 V2ray 参考 <a href="https://toutyrater.github.io/">官方文档</a><br>
-配置 config.json，命令：<code>vim /etc/v2ray/config.json</code>，接受 nginx 传来的数据。在“inbounds”中新增“streamSetting”配置，传输协议使用“websocket”。</p>
-<p><strong>注意</strong>：json 文件不支持注释，下述配置中”#”号及后续内容都要删掉。</p>
-<pre><code>{
-  &quot;log&quot;: {
-    &quot;loglevel&quot;: &quot;warning&quot;,
-    &quot;access&quot;: &quot;/var/log/v2ray/access.log&quot;,
-    &quot;error&quot;: &quot;/var/log/v2ray/error.log&quot;
-   },
-  &quot;inbounds&quot;: [{
-    &quot;port&quot;: 12345,   #监听端口
-    &quot;protocol&quot;: &quot;vmess&quot;,
-    &quot;settings&quot;: {
-      &quot;clients&quot;: [
-        {
-          &quot;id&quot;: &quot;xxxxx&quot;, # 可以使用v2ctl uuid生成
-          &quot;level&quot;: 1,
-          &quot;alterId&quot;: 4 # 数值越大，占用资源越多
-        }
-      ]
-    },
-    &quot;streamSettings&quot;: {     
-        &quot;network&quot;: &quot;ws&quot;, # 载体配置段，设置为websocket
-        &quot;wsSettings&quot;: {
-          &quot;path&quot;: &quot;/xkliangyan/xmhz&quot;  # 与nginx中的路径保持一致
-        }
-      },
-    &quot;listen&quot;: &quot;127.0.0.1&quot; # 只允许本地的连接，出于安全考虑
-  }],
-  &quot;outbounds&quot;: [{
-    &quot;protocol&quot;: &quot;freedom&quot;,
-    &quot;settings&quot;: {}
-  },{
-    &quot;protocol&quot;: &quot;blackhole&quot;,
-    &quot;settings&quot;: {},
-    &quot;tag&quot;: &quot;blocked&quot;
-  }],
-  &quot;routing&quot;: {
-    &quot;rules&quot;: [
-      {
-        &quot;type&quot;: &quot;field&quot;,
-        &quot;ip&quot;: [&quot;geoip:private&quot;],
-        &quot;outboundTag&quot;: &quot;blocked&quot;
-      }
-    ]
-  }
-}
-</code></pre>
-<p>配置完成，检测内容是否无误，命令：<code>cat /etc/v2ray/config.json</code>，重启 v2ray 服务：<code>systemctl restart v2ray</code> 进行测试验证，输入域名或其它路径，应正常访问或提示 404 等，输入 v2ray 特定路径，例如：<code>www.域名.com\xkliangyan\xmhz</code> 返回 &quot;bad request&quot;，说明 nginx 将流量转发给了 v2ray ，并且 v2ray 收到了请求。我们从外部看起来完全是一个人畜无害的正规网站，特定手段请求特定网址才是科学上网的通道。</p>
-<h4 id="cloudflarecdn-域名加速与伪装">CloudflareCDN 域名加速与伪装</h4>
-<p>Cloudflare 可加速动静态网站，用于 v2ray 的域名解析，还可以起到隐藏真实 IP 的作用。首先在 <a href="https://dash.cloudflare.com/" title="官网">官网</a> 注册账号登陆后，点击 DNS 页面，添加两条 A 记录解析到 VPS 的公网 IP，然后将代理状态的小云朵点亮，再到域名注册商把解析服务器换成 CloudflareCDN 的就可以了</p>
-<h4 id="客户端设置">客户端设置</h4>
-<p>Windows 平台的 v2rayN 软件为例说明使用方法。<br>
-打开 v2rayN，服务器-添加 [Vmess] 服务器，截图如下：<br>
-<img src="https://xkly.tk/post-images/1597722284036.jpg" alt="" loading="lazy"><br>
-确定后，右下角图标右键，开启HTTP代理，打开游览器，访问 google、youtube 正常即成功了。</p>
-<h2 id="end">End</h2>
-<p>此文章写于 2019-10-17 14:22:10</p>
+<h3 id="修改ssh端口">修改SSH端口</h3>
+<ul>
+<li>
+<p>安装依赖项 <code>yum install policycoreutils-python</code></p>
+</li>
+<li>
+<p>安装semanage<code>yum provides semanage</code></p>
+</li>
+<li>
+<p>查询当前 SSH 服务端口<code>semanage port -l | grep ssh</code></p>
+</li>
+<li>
+<p>向 SELinux 中添加我们需要添加的ssh端口<code>semanage port -a -t ssh_port_t -p tcp xxx</code></p>
+</li>
+<li>
+<p>查询修改是否成功<code>semanage port -l | grep ssh</code></p>
+</li>
+<li>
+<p>在 firewall 防火墙中开放端口<code>firewall-cmd --permanent --zone=public --add-port=xxx/tcp</code></p>
+</li>
+<li>
+<p>重新加载 firewall 防火墙<code>firewall-cmd --reload</code></p>
+</li>
+<li>
+<p>查看 firewall 添加的开放端口是否成功<code>firewall-cmd --zone=public --list-ports</code></p>
+</li>
+<li>
+<p>修改 <code>/etc/ssh/sshd_config</code> 中的 #Port 22 为新的端口号 Port xxx</p>
+</li>
+<li>
+<p>重启 SSH 服务<code>systemctl restart sshd</code></p>
+</li>
+</ul>
+<h2 id="路由器端口转发">路由器端口转发</h2>
+<p>路由器端口转发需要有公网 IP，若是动态 IP 需要配合 DDNS 使用。博主使用的是华硕 TUF-AX3000 路由器：外部端口为远程连接使用，内部端口对应以上修改的 SSH 端口：<br>
+<img src="http://localhost:4000/post-images/1615427553310.jpg" alt="" loading="lazy"><br>
+最后使用 SSH 软件远程连接测试：<br>
+<img src="http://localhost:4000/post-images/1615427733334.jpg" alt="" loading="lazy"><br>
+连接成功：<br>
+<img src="http://localhost:4000/post-images/1615432376061.jpg" alt="" loading="lazy"></p>
 
             </div>
             
@@ -719,7 +627,7 @@ server {
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://xkly.tk/post/ibVPIl1C2/" title="v2ray流量伪装：WebSocket + TLS +CloudflareCDN 初体验">https://xkly.tk/post/ibVPIl1C2/</a>
+      <a href="http://localhost:4000/post/blog_5/" title="Hyper-V 安装 Centos7.9 以及内网穿透">http://localhost:4000/post/blog_5/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -728,19 +636,21 @@ server {
   </ul>
   <div class="tags">
     
-      <a href="https://xkly.tk/tag/VfslJdazV/"># 学习</a>
-    
-      <a href="https://xkly.tk/tag/mjperanwT/"># 记录</a>
+      <a href="http://localhost:4000/tag/VfslJdazV/"># 学习</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="整理" href="http://localhost:4000/post/blog_6/">整理</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="整理" href="http://localhost:4000/post/blog_6/">上一篇</a>
+      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="偶因一回顾，便为心上人" href="https://xkly.tk/post/6S_dEO0jA/">偶因一回顾，便为心上人</a>
-        <a class="nav-mobile-next" title="偶因一回顾，便为心上人" href="https://xkly.tk/post/6S_dEO0jA/">下一篇</a>
+        <a class="nav-pc-next" title="「空格」的重要性" href="http://localhost:4000/post/Blog_4/">「空格」的重要性</a>
+        <a class="nav-mobile-next" title="「空格」的重要性" href="http://localhost:4000/post/Blog_4/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
@@ -778,13 +688,13 @@ server {
   
   
   <div class="bg-img">
-    <img src="https://cdn.jsdelivr.net/gh/xkliangyan/CDN@master/media/images/2.jpg" />
+    <img src="https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master//media/images/2.jpg" />
   </div>
   
   
   
   
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xkliangyan/CDN@master/media/live2d/css/live2d.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master//media/live2d/css/live2d.css" />
 <div class="box-scale">
   <div id="landlord" style="left: 5px;bottom: px;"
     data-key="">
@@ -825,7 +735,7 @@ server {
   let landlord = document.querySelector('#landlord');
   var apiKey = landlord.dataset.key;
 </script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xkliangyan/CDN@master/media/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master//media/live2d/js/live2d.js"></script>
 <script>
 	var home_Path = document.location.protocol + '//' + window.document.location.hostname + ":" + window.document.location.port + '/';
 	var userAgent = window.navigator.userAgent.toLowerCase();
@@ -1471,7 +1381,7 @@ server {
   hljs.initHighlightingOnLoad();
   
   // 离开当前页title变化
-  var leaveTitle = "";
+  var leaveTitle = "bey~";
   if (leaveTitle) {
     document.addEventListener('visibilitychange', function () {
       if (document.visibilityState == 'hidden') {
@@ -1893,7 +1803,7 @@ server {
   })
 
 </script>
-<script src="https://cdn.jsdelivr.net/gh/xkliangyan/CDN@master/media/js/motion.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master//media/js/motion.js"></script>
 
 <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
 <script>
@@ -1906,10 +1816,12 @@ server {
 <script src="/media/js/mouse/peace.js"></script>
 
 
+<script src="https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master//media/js/cool.js"></script>
+
 
 
   <div class="snow-container"></div>
-  <script src="https://cdn.jsdelivr.net/gh/xkliangyan/CDN@master/media/js/bg/canvas-nest.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/xkliangyan/ly.github.io@master//media/js/bg/canvas-nest.js"></script>
   <script>
   const config = {
     color: '255,0,0',
